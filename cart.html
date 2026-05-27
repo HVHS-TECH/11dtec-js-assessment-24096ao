@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cart</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">menu</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="cartHeading">
+                <h1>cart Heading</h1>
+            </div>
+
+            <div class="item">
+                <div class="itemImg">
+                    <p>img</p>
+                </div>
+                
+                <div class="itemInfo" id="itemInfo">
+                    <p>item info</p>
+                </div>
+
+                <div class="submitItem">
+                    <form onsubmit="return false;">
+                        <lable for="quantity">Quantity: </lable>
+                        <input type="number" id="quantity" name="formQuantity" value="quantity">
+                        <input type="Submit" onClick="addQuantity()">
+                    </form>
+                </div>
+            </div>
+
+            <button href="receipt.html" onClick="calculateAll()">place order</button>
+            
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+<script src="js/cartScript.js"></script>
+<script src="js/menuScript.js"></script>
+</body>
+
+</html>
+
+
