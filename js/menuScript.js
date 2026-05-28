@@ -3,8 +3,7 @@ menuScript.js
 ****************************/
 console.log("Running menuScript.js")
 
-
-// variables
+/******food************/
 let EnglishBreakfast = {
     name: "english breakfast",
     price: 20
@@ -26,6 +25,7 @@ let sandwich = {
     price: 10
 };
 
+/******drinks************/
 let espresso = 2;
 let doubleEspresso = 2;
 let macchiato = 2;
@@ -45,7 +45,7 @@ let orangeJuice = 2.30;
 /****************************
 Main code
 ****************************/
-console.log("hello world!")
+
 
 
 /****************************

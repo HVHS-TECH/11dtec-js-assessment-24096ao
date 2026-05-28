@@ -18,8 +18,16 @@
                 <h1>receipt Heading</h1>
             </div>
 
-            <div class="form">
-                <p>form</p>
+            <div class="receiptForm">
+                <form onsubmit="return false;">
+                        <lable for="userName">Name: </lable>
+                        <input type="string" id="userNameField" name="formUserName">
+                        <br>
+                        <lable for="userMoney">Pay here: </lable>
+                        <input type="number" id="userMoneyField" name="formUserMoney">
+                        <br>
+                        <input type="Submit" onClick="order()">
+                </form>
             </div>
 
         </div>
@@ -29,6 +37,9 @@
 
     </footer>
 
+<script src="js/cartScript.js"></script>
+<script src="js/menuScript.js"></script>
+<script src="js/receiptScript.js"></script>
 </body>
 
 </html>
