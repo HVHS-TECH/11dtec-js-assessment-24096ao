@@ -6,8 +6,6 @@ console.log("Running cartScript.js")
 
 // variables
 const OUTPUT = document.getElementById("itemInfo");
-const USER_NAME_FIELD = document.getElementById("userNameField");
-const USER_MONEY_FIELD = document.getElementById("userMoneyField");
 
 let totalPrice = 0;
 
@@ -31,9 +29,7 @@ function addedItem(_product, _price) {
     console.log("list: " + productList);
 }
 
-function addQuantity() {
 
-}
 
 
 /****************************
