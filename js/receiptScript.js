@@ -3,6 +3,7 @@ recieptScript.js
 ****************************/
 console.log("Running recieptScript.js");
 
+const RECIEPT_OUTPUT = document.getElementById("itemList");
 const USER_NAME_FIELD = document.getElementById("userNameField");
 const USER_MONEY_FIELD = document.getElementById("userMoneyField");
 
@@ -30,6 +31,7 @@ if (USER_NAME_FIELD.checkValidity() === false && USER_NAME_FIELD.value != String
 } 
 
 function order() {
+    RECIEPT_OUTPUT.innerHTML += (SHOPPING_LIST);
     console.log("the total price is " + totalPrice);
     console.log("Your name is " +user.name);
     console.log("you have entered " + user.money);
@@ -41,6 +43,7 @@ if (user.money > totalPrice || user.money < 0) {
     change = 0;
 }
 
+console.log("Inisde the shopping list is:" +SHOPPING_LIST);
 
 /****************************
 end of code

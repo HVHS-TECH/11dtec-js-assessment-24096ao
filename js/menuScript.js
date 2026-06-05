@@ -1,7 +1,8 @@
 /****************************
 menuScript.js
 ****************************/
-console.log("Running menuScript.js")
+console.log("Running menuScript.js");
+console.log("Inisde the shopping list is:" +SHOPPING_LIST);
 
 /******food************/
 let EnglishBreakfast = {
