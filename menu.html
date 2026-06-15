@@ -9,13 +9,15 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="cart.html">cart</a></li>
-            <li><a href="receipt.html">receipt</a></li>
+            <li><input type="button" onClick="hideMenu()" value="cart"></input></li>
+            <li><input type="button" onClick="hideCart()" value="menu"></input></li>
+            <li><input type="button" onClick="receipt()" value="receipt"></input></li>
         </ul>
     </nav>
     
     <main>
-        <div class="container">
+        <!--**************************************Menu***************************************************************-->
+        <div class="menu" id="menu">
             <div class="foodHeading">
                 <h1>food Heading</h1>
             </div>
@@ -146,16 +148,37 @@
             
         </div>
 
-        <div id="itemInfo">
-            
+    <!--************************************************cart*****************************************-->
+
+        <div class="cart" id="cart">
+            <div class="container">
+                <div class="cartHeading">
+                    <h1>cart Heading</h1>
+                </div>
+                    
+                <div id="itemInfo">
+                    
+
+                </div>
+
+                    <div class="submitItem">
+                        <form onsubmit="return false;">
+                            <lable for="quantity">Quantity: </lable>
+                            <input type="number" id="quantity" name="formQuantity" value="quantity">
+                            <input type="Submit" onClick="addQuantity()">
+                        </form>
+                    </div>
+                </div>
+
+                <button><a href="receipt.html">place order</a></button>
         </div>
+
     </main>
 
     <footer>
 
     </footer>
 
-<script src="js/cartScript.js"></script>
 <script src="js/menuScript.js"></script>
 </body>
 

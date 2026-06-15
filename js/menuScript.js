@@ -2,7 +2,13 @@
 menuScript.js
 ****************************/
 console.log("Running menuScript.js");
-console.log("Inisde the shopping list is:" +SHOPPING_LIST);
+
+let totalPrice = 0;
+
+const SHOPPING_LIST = [ ];
+
+let document.getElementById("cart").style.visability = "visable";
+let document.getElementById("menu").style.visability = "hidden";
 
 /******food************/
 let EnglishBreakfast = {
@@ -52,8 +58,33 @@ Main code
 /****************************
 functions
 ****************************/
+function addedItem(_product, _price) {
 
+    totalPrice = totalPrice + _price;
+    SHOPPING_LIST.push(" "+_product);
+    
+    console.log(" ");
+    console.log("you added " + _product);
+    console.log(_product + " costs: " + _price);
+    console.log("the total price is " + totalPrice + " dollars");
+    console.log("list: " + SHOPPING_LIST);
+}
 
+function hideMenu() {
+    //hide menu
+    document.getElementById("cart").style.visability = "visable";
+    document.getElementById("menu").style.visability = "hidden";
+}
+
+function hideCart() {
+    //hide cart
+    cart.style = "none";
+    menu.style = " ";
+}
+
+function receipt() {
+    //hide all and show receipt
+}
 
 /****************************
 end of code
