@@ -7,8 +7,9 @@ let totalPrice = 0;
 
 const SHOPPING_LIST = [ ];
 
-let document.getElementById("cart").style.visability = "visable";
-let document.getElementById("menu").style.visability = "hidden";
+let menu = document.getElementById("menu").style.display;
+let cart = document.getElementById("cart").style.display;
+let receipt = document.getElementById("receipt").style.display;
 
 /******food************/
 let EnglishBreakfast = {
@@ -72,18 +73,25 @@ function addedItem(_product, _price) {
 
 function hideMenu() {
     //hide menu
-    document.getElementById("cart").style.visability = "visable";
-    document.getElementById("menu").style.visability = "hidden";
+    console.log("hide menu");
+    menu.object.style.display="none";
+    cart.object.style.display="block";
+    receipt.object.style.display="none";
 }
 
 function hideCart() {
     //hide cart
-    cart.style = "none";
-    menu.style = " ";
+    console.log("hide cart");
+    menu.object.style.display="block";
+    cart.object.style.display="none";
+    receipt.object.style.display="none";
 }
 
-function receipt() {
+function showReceipt() {
     //hide all and show receipt
+    menu.style.display = 'none';
+    cart.style.display='none';
+    receipt.style.display='block';
 }
 
 /****************************

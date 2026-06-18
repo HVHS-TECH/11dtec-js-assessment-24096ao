@@ -1,0 +1,11 @@
+.menu {
+    display: block;
+}
+
+.cart {
+    display: none;
+}
+
+.receipt {
+    display: none;
+}
