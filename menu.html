@@ -10,8 +10,8 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><input type="button" onClick="hideMenu()" value="cart"></input></li>
-            <li><input type="button" onClick="hideCart()" value="menu"></input></li>
+            <li><input type="button" onClick="showCart()" value="cart"></input></li>
+            <li><input type="button" onClick="showMenu()" value="menu"></input></li>
             <li><input type="button" onClick="showReceipt()" value="receipt"></input></li>
         </ul>
     </nav>
@@ -28,7 +28,7 @@
                 
                 <p>English Breakfast</p>
 
-                <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price)">Add item</button>
+                <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">Add item</button>
             </div>
 
             <div class="food2">
@@ -156,9 +156,13 @@
                     <h1>cart Heading</h1>
                 </div>
                     
-                <div id="itemInfo">
+                <div id="items">
                     
 
+                </div>
+
+                <div id="total">
+                    
                 </div>
 
                     <div class="submitItem">
@@ -174,7 +178,7 @@
 
     <!--************************************************receipt*****************************************-->
 
-        <div class="receipt">
+        <div class="receipt" id="receipt">
             <div class="Heading">
                 <h1>receipt Heading</h1>
             </div>
@@ -203,7 +207,7 @@
 
     </footer>
 
-<script src="js/menuScript.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>

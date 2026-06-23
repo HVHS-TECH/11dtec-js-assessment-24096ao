@@ -7,9 +7,12 @@ let totalPrice = 0;
 
 const SHOPPING_LIST = [ ];
 
-let menu = document.getElementById("menu").style.display;
-let cart = document.getElementById("cart").style.display;
-let receipt = document.getElementById("receipt").style.display;
+let menu = document.getElementById("menu");
+let cart = document.getElementById("cart");
+let receipt = document.getElementById("receipt");
+
+const OUTPUT = document.getElementById("items");
+const TOTAL = document.getElementById("total");
 
 /******food************/
 let EnglishBreakfast = {
@@ -69,29 +72,33 @@ function addedItem(_product, _price) {
     console.log(_product + " costs: " + _price);
     console.log("the total price is " + totalPrice + " dollars");
     console.log("list: " + SHOPPING_LIST);
+    
+    OUTPUT.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
+
 }
 
-function hideMenu() {
-    //hide menu
+/**********************nav buttons****************************/
+function showCart() {
+    //Show cart
     console.log("hide menu");
-    menu.object.style.display="none";
-    cart.object.style.display="block";
-    receipt.object.style.display="none";
+    menu.style.display="none";
+    cart.style.display="block";
+    receipt.style.display="none";
 }
 
-function hideCart() {
-    //hide cart
+function showMenu() {
+    //show menu
     console.log("hide cart");
-    menu.object.style.display="block";
-    cart.object.style.display="none";
-    receipt.object.style.display="none";
+    menu.style.display="block";
+    cart.style.display="none";
+    receipt.style.display="none";
 }
 
 function showReceipt() {
-    //hide all and show receipt
-    menu.style.display = 'none';
-    cart.style.display='none';
-    receipt.style.display='block';
+    //show receipt
+    menu.style.display="none";
+    cart.style.display="none";
+    receipt.style.display="block";
 }
 
 /****************************
