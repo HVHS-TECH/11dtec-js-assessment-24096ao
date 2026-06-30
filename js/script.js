@@ -11,8 +11,18 @@ let menu = document.getElementById("menu");
 let cart = document.getElementById("cart");
 let receipt = document.getElementById("receipt");
 
+const USER_NAME = document.getElementById("userNameField");
+const USER_MONEY = document.getElementById("userMoneyField");
+
+let userMoney = Number(USER_MONEY.value);
+let userName = Number(USER_NAME.value);
+
+
 const OUTPUT = document.getElementById("items");
 const TOTAL = document.getElementById("total");
+const RECEIPT_OUTPUT = document.getElementById("receiptOutput");
+
+let change = userMoney - totalPrice;
 
 /******food************/
 let EnglishBreakfast = {
@@ -57,8 +67,6 @@ let orangeJuice = 2.30;
 Main code
 ****************************/
 
-
-
 /****************************
 functions
 ****************************/
@@ -74,10 +82,31 @@ function addedItem(_product, _price) {
     console.log("list: " + SHOPPING_LIST);
     
     OUTPUT.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
-
+    TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
+    RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
 }
 
-/**********************nav buttons****************************/
+function order() {
+    
+    if (userMoney < totalPrice && userMoney < 0 && change < -1) {
+        console.log("You havent payed enough!");
+        return;
+    }
+    
+    console.log(change, userMoney, totalPrice);
+    console.log("Order placed");
+    console.log("you ordered "+SHOPPING_LIST);
+    console.log("The total is "+totalPrice);
+    console.log("your change is " +change);
+
+    RECEIPT_OUTPUT.innerHTML += "<p>Hello "+userName+"!</p>";
+    RECEIPT_OUTPUT.innerHTML += "<p>You ordered " +SHOPPING_LIST+ "</p>";
+    RECEIPT_OUTPUT.innerHTML += "<p> The total price is "+totalPrice+"</p>";
+    RECEIPT_OUTPUT.innerHTML += "<p>Your change is " +change+ "</p>";
+
+return;
+}
+/**********************NAV****************************/
 function showCart() {
     //Show cart
     console.log("hide menu");
