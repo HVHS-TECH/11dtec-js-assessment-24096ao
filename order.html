@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Menu</title>
@@ -10,9 +10,9 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><input type="button" onClick="showCart()" value="cart"></input></li>
-            <li><input type="button" onClick="showMenu()" value="menu"></input></li>
-            <li><input type="button" onClick="showReceipt()" value="receipt"></input></li>
+            <li><input type="button" onClick="showCart()" value="cart"></li>
+            <li><input type="button" onClick="showMenu()" value="menu"></li>
+            <li><input type="button" onClick="showReceipt()" value="receipt"></li>
         </ul>
     </nav>
     
@@ -23,7 +23,7 @@
                 <h1>food Heading</h1>
             </div>
 
-            <div class="food1">
+            <div class="food">
                 <img>
                 
                 <p>English Breakfast</p>
@@ -31,7 +31,7 @@
                 <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">Add item</button>
             </div>
 
-            <div class="food2">
+            <div class="food">
                 <img>
 
                 <p>waffle</p>
@@ -39,7 +39,7 @@
                 <button class="addItem" onClick="addedItem(waffle.name, waffle.price)">Add item</button>
             </div>
 
-            <div class="food3">
+            <div class="food">
                 <img>
 
                 <p>pankake</p>
@@ -47,7 +47,7 @@
                 <button class="addItem" onClick="addedItem(pancake.name, pancake.price)">Add item</button>
             </div>
 
-            <div class="food4">
+            <div class="food">
                 <img>
 
                 <p>bagle</p>
@@ -55,7 +55,7 @@
                 <button class="addItem" onClick="addedItem(bagle.name, bagle.price)">Add item</button>
             </div>
 
-            <div class="food5">
+            <div class="food">
                 <img>
 
                 <p>sandwich</p>
@@ -63,19 +63,20 @@
                 <button class="addItem" onClick="addedItem(sandwich.name, sandwich.price)">Add item</button>
             </div>
 
+<div class="drinks">
             <div class="drinkHeading">
                 <h1>drink Heading</h1>
             </div>
 
-            <div class="drink1">
+            <div class="drink">
                 <img>
 
                 <p>drink 1</p>
 
-                <button class="addDrink1" onClick="addDrink1()">Add item</button>
+                <button class="addDrink1" onClick="addedItem(cofee.name, sandwich.price)">Add item</button>
             </div>
 
-            <div class="drink2">
+            <div class="drink">
                 <img>
 
                 <p>drink 1</p>
@@ -83,7 +84,7 @@
                 <button class="addDrink2" onClick="addDrink2()">Add item</button>
             </div>
             
-            <div class="drink3">
+            <div class="drink">
                 <img>
 
                 <p>drink 3</p>
@@ -91,7 +92,7 @@
                 <button class="addDrink3" onClick="addDrink3()">Add item</button>
             </div>
             
-            <div class="drink4">
+            <div class="drink">
                 <img>
 
                 <p>drink 4</p>
@@ -99,7 +100,7 @@
                 <button class="addDrink4" onClick="addDrink4()">Add item</button>
             </div>
             
-            <div class="drink5">
+            <div class="drink">
                 <img>
 
                 <p>drink 5</p>
@@ -107,7 +108,7 @@
                 <button class="addDrink5" onClick="addDrink5()">Add item</button>
             </div>
             
-            <div class="drink6">
+            <div class="drink">
                 <img>
 
                 <p>drink 6</p>
@@ -115,7 +116,7 @@
                 <button class="addDrink6" onClick="addDrink6()">Add item</button>
             </div>
 
-             <div class="drink7">
+             <div class="drink">
                 <img>
 
                 <p>drink 7</p>
@@ -123,7 +124,7 @@
                 <button class="addDrink7" onClick="addDrink7()">Add item</button>
             </div>
             
-            <div class="drink8">
+            <div class="drink">
                 <img>
 
                 <p>drink 8</p>
@@ -131,7 +132,7 @@
                 <button class="addDrink8" onClick="addDrink8()">Add item</button>
             </div>
             
-            <div class="drink9">
+            <div class="drink">
                 <img>
 
                 <p>drink 9</p>
@@ -139,14 +140,14 @@
                 <button class="addDrink9" onClick="addDrink9()">Add item</button>
             </div>
             
-            <div class="drink10">
+            <div class="drink">
                 <img>
 
                 <p>drink 10</p>
 
                 <button class="addDrink10" onClick="addDrink10()">Add item</button>
             </div>
-            
+</div>
         </div>
 
     <!--************************************************cart*****************************************-->
@@ -164,14 +165,6 @@
                 <div id="total">
                     
                 </div>
-
-                    <div class="submitItem">
-                        <form onsubmit="return false;">
-                            <lable for="quantity">Quantity: </lable>
-                            <input type="number" id="quantity" name="formQuantity" value="quantity">
-                            <input type="Submit" onClick="addQuantity()">
-                        </form>
-                    </div>
 
                 <button><a onClick="showReceipt()">place order</a></button>
         </div>
@@ -215,5 +208,3 @@
 </body>
 
 </html>
-
-

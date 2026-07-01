@@ -3,26 +3,30 @@ menuScript.js
 ****************************/
 console.log("Running menuScript.js");
 
-let totalPrice = 0;
-
 const SHOPPING_LIST = [ ];
 
-let menu = document.getElementById("menu");
-let cart = document.getElementById("cart");
-let receipt = document.getElementById("receipt");
-
+//fields
 const USER_NAME = document.getElementById("userNameField");
 const USER_MONEY = document.getElementById("userMoneyField");
 
-let userMoney = Number(USER_MONEY.value);
-let userName = Number(USER_NAME.value);
-
-
+//innerhtml
 const OUTPUT = document.getElementById("items");
 const TOTAL = document.getElementById("total");
 const RECEIPT_OUTPUT = document.getElementById("receiptOutput");
 
-let change = userMoney - totalPrice;
+//nav
+let menu = document.getElementById("menu");
+let cart = document.getElementById("cart");
+let receipt = document.getElementById("receipt");
+
+//total
+let totalPrice = 0;
+
+//user info
+let userMoney = Number(USER_MONEY.value);
+let userName = String(USER_NAME.value);
+
+let change = userMoney-totalPrice;
 
 /******food************/
 let EnglishBreakfast = {
@@ -47,7 +51,10 @@ let sandwich = {
 };
 
 /******drinks************/
-let espresso = 2;
+let espresso = {
+    name: "espresso",
+    price: 2
+};
 let doubleEspresso = 2;
 let macchiato = 2;
 let ristretto = 2;
@@ -87,12 +94,12 @@ function addedItem(_product, _price) {
 }
 
 function order() {
-    
-    if (userMoney < totalPrice && userMoney < 0 && change < -1) {
+    if (userMoney < totalPrice || userMoney < 0 || change < -1) {
         console.log("You havent payed enough!");
-        return;
+        RECEIPT_OUTPUT.innerHTML = "<p>You haven't entered enough money!</p>";
+        return; 
     }
-    
+
     console.log(change, userMoney, totalPrice);
     console.log("Order placed");
     console.log("you ordered "+SHOPPING_LIST);
@@ -103,9 +110,8 @@ function order() {
     RECEIPT_OUTPUT.innerHTML += "<p>You ordered " +SHOPPING_LIST+ "</p>";
     RECEIPT_OUTPUT.innerHTML += "<p> The total price is "+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML += "<p>Your change is " +change+ "</p>";
-
-return;
 }
+
 /**********************NAV****************************/
 function showCart() {
     //Show cart
