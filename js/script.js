@@ -121,7 +121,6 @@ Main code
 ****************************/
 
 
-
 /****************************
 functions
 ****************************/
@@ -184,11 +183,8 @@ function order() {
     RECEIPT_OUTPUT.innerHTML += "<p>Your change is " +change+ "</p>";
 }
 
-/**********************NAV****************************/
-
-
-
-/***********************************show cart*********************************/
+/**********************nav****************************/
+/******************show cart************/
 function showCart() {
     //Show cart
     console.log("hide menu");
@@ -198,7 +194,7 @@ function showCart() {
     TITLE.innerHTML = "Cart";
 }
 
-/***********************************show menu*********************************/
+/**************show menu***********/
 function showMenu() {
     //show menu
     console.log("hide cart");
@@ -208,7 +204,7 @@ function showMenu() {
     TITLE.innerHTML = "Menu";
 }
 
-/***********************************show receipt*********************************/
+/**********show receipt********/
 function showReceipt() {
     //show receipt
     menu.style.display = "none";
