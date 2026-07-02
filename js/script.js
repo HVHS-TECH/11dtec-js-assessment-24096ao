@@ -12,6 +12,7 @@ const USER_MONEY = document.getElementById("userMoneyField");
 //innerhtml
 const OUTPUT = document.getElementById("items");
 const TOTAL = document.getElementById("total");
+const ITEM_LIST = document.getElementById("itemList");
 const RECEIPT_OUTPUT = document.getElementById("receiptOutput");
 
 //nav
@@ -91,6 +92,7 @@ function addedItem(_product, _price) {
     OUTPUT.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
     TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
+    ITEM_LIST.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
 }
 
 function order() {

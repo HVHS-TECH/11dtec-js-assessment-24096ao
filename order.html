@@ -9,16 +9,19 @@
 <body>
     <nav>
         <ul>
+            <li><a onClick="showReceipt()" value="receipt">Receipt</a></li>
+            <li><a onClick="showCart()" value="cart">Cart</a></li>
+            <li><a onClick="showMenu()" value="menu">Menu</a></li>
             <li><a href="index.html">Home</a></li>
-            <li><input type="button" onClick="showCart()" value="cart"></li>
-            <li><input type="button" onClick="showMenu()" value="menu"></li>
-            <li><input type="button" onClick="showReceipt()" value="receipt"></li>
         </ul>
     </nav>
     
     <main>
         <!--**************************************Menu***************************************************************-->
         <div class="menu" id="menu">
+
+<div class="foods">
+
             <div class="foodHeading">
                 <h1>food Heading</h1>
             </div>
@@ -62,6 +65,8 @@
 
                 <button class="addItem" onClick="addedItem(sandwich.name, sandwich.price)">Add item</button>
             </div>
+</div>
+
 
 <div class="drinks">
             <div class="drinkHeading">
@@ -157,12 +162,12 @@
                     <h1>cart Heading</h1>
                 </div>
                     
-                <div id="items">
+                <div id="items" class="items">
                     
 
                 </div>
 
-                <div id="total">
+                <div id="total" class="total">
                     
                 </div>
 
@@ -172,11 +177,11 @@
     <!--************************************************receipt*****************************************-->
 
         <div class="receipt" id="receipt">
-            <div class="Heading">
+            <div class="receiptHeading">
                 <h1>receipt Heading</h1>
             </div>
 
-            <div class="item list" id="itemList">
+            <div class="itemList" id="itemList">
                 
             </div>
 

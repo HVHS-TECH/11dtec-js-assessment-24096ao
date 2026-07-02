@@ -1,31 +1,135 @@
+/****************************Nav*********************************/
 nav {
-
     text-decoration-line: none;
-    padding: 10px;
     background-color: aqua;
-    color:aliceblue;
-
 }
+
+ul{
+    overflow: hidden;
+    list-style-type: none;
+}
+
+ul li {
+    float: right;
+    background-color: rgb(255, 172, 255);
+}
+
+ul li a {
+    color: black;
+    Border: 4px solid aqua;
+    display: block;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+ul li a:hover {
+    background-color: #3e51ff;
+}
+
+/****************************nav end******************************/
 
 body {
-    background-color: rgb(84, 84, 122);
+    background-color: rgb(239, 239, 243);
 }
 
-.drinks {
-    background-color: blueviolet;
+/****************************Drinks & food*********************************/
+.drinks, .foods {
+    background-color: rgb(235, 219, 250);
     padding: 10px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto;
+    padding: 10px 10px;
+    text-align: center;
 }
 
-.drink {
+.drinkHeading, .foodHeading {
+    border: solid 5px black;
+    padding: 20px;
+    color: white;
+    background-color: rgb(0, 96, 126);
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.drink, .food {
     background-color: beige;
     padding: 20px;
     border: solid 2px black;
-    margin: 20px;
+    margin: 30px;
 }
 
+/****************************Drinks & food end*********************************/
 
 
+/**********************************Cart****************************************/
+.cart{
+    background-color: rgb(235, 219, 250);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    padding: 10px 10px;
+}
 
+.cartHeading {
+    background-color: rgb(141, 212, 26);
+    padding: 10px;
+    text-align: center;
+}
+
+.items {
+    background-color: rgb(121, 101, 139);
+    padding: 10px;
+    margin: 10px;
+}
+
+.total {
+    background-color: rgb(32, 145, 173);
+    padding: 10px;
+    margin: 10px;
+}
+
+/**********************************Cart end****************************************/
+
+
+/**********************************receipt****************************************/
+.receipt {
+    background-color: rgb(32, 99, 163);
+    padding: 10px;
+    padding: 10px 10px;
+}
+
+.receiptHeading {
+    background-color: rgb(238, 211, 238);
+    padding: 10px;
+    text-align: center;
+}
+
+.itemList {
+    background-color: rgb(109, 204, 71);
+    padding: 10px;
+    margin: 10px;
+}
+
+.receiptOutput {
+    background-color: rgb(121, 101, 139);
+    padding: 10px;
+    margin: 10px;
+}
+
+.receiptForm {
+    background-color: rgb(121, 101, 139);
+    padding: 10px;
+    margin: 10px;
+}
+
+.receiptForm input {
+    background-color: rgb(218, 108, 136);
+    padding: 10px;
+    margin: 10px;
+}
+/**********************************receipt end****************************************/
 
 
 
