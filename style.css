@@ -1,7 +1,30 @@
+/***********************************hide & show***************************************/
+.menu {
+    display: block;
+    background-color: #efd5c3;
+}
+
+.cart {
+    display: grid;
+    display: none;
+    background-color: #efd5c3;
+}
+
+.receipt {
+    display: none;
+    background-color: #efd5c3;
+}
+/***********************************hide & show end***************************************/
+
+/* dark brown / 30% --> b1887f */
+/* light brown / 60% --> efd5c3 */
+/* blue / 10% --> 00c3ff */
+/* light blue / hover --> 96d5ff */
+
 /****************************Nav*********************************/
 nav {
     text-decoration-line: none;
-    background-color: aqua;
+    background-color:#b1887f;
 }
 
 ul{
@@ -11,49 +34,50 @@ ul{
 
 ul li {
     float: right;
-    background-color: rgb(255, 172, 255);
+    background-color: #00c3ff;
 }
 
 ul li a {
     color: black;
-    Border: 4px solid aqua;
+    Border: 4px solid #b1887f;
     display: block;
     text-align: left;
     padding: 20px 20px;
 }
 
 ul li a:hover {
-    background-color: #3e51ff;
+    background-color: #96d5ff;
 }
 
 /****************************nav end******************************/
 
 body {
-    background-color: rgb(239, 239, 243);
+    background-color: #efd5c3;
 }
 
 /****************************Drinks & food*********************************/
 .drinks, .foods {
-    background-color: rgb(235, 219, 250);
+    background-color: #b1887f;
     padding: 10px;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: auto auto auto;
     padding: 10px 10px;
     text-align: center;
+    border: solid 5px #efd5c3;
 }
 
 .drinkHeading, .foodHeading {
-    border: solid 5px black;
+    border: solid 5px #efd5c3;
     padding: 20px;
-    color: white;
-    background-color: rgb(0, 96, 126);
+    color: black;
+    background-color: #efd5c3;
     grid-column-start: 1;
     grid-column-end: 5;
 }
 
 .drink, .food {
-    background-color: beige;
+    background-color: #00c3ff;
     padding: 20px;
     border: solid 2px black;
     margin: 30px;
@@ -64,28 +88,27 @@ body {
 
 /**********************************Cart****************************************/
 .cart{
-    background-color: rgb(235, 219, 250);
+    background-color: #b1887f;
     padding: 10px;
-    display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
     padding: 10px 10px;
 }
 
 .cartHeading {
-    background-color: rgb(141, 212, 26);
+    background-color: #efd5c3;
     padding: 10px;
     text-align: center;
 }
 
 .items {
-    background-color: rgb(121, 101, 139);
+    background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
 }
 
 .total {
-    background-color: rgb(32, 145, 173);
+    background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
 }
@@ -95,70 +118,38 @@ body {
 
 /**********************************receipt****************************************/
 .receipt {
-    background-color: rgb(32, 99, 163);
+    background-color: #b1887f;
     padding: 10px;
     padding: 10px 10px;
 }
 
 .receiptHeading {
-    background-color: rgb(238, 211, 238);
+    background-color: #efd5c3;
     padding: 10px;
     text-align: center;
 }
 
 .itemList {
-    background-color: rgb(109, 204, 71);
+    background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
 }
 
 .receiptOutput {
-    background-color: rgb(121, 101, 139);
+    background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
 }
 
 .receiptForm {
-    background-color: rgb(121, 101, 139);
+    background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
 }
 
 .receiptForm input {
-    background-color: rgb(218, 108, 136);
+    background-color: #00c3ff;
     padding: 10px;
     margin: 10px;
 }
 /**********************************receipt end****************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***********************************order pg***************************************/
-
-.menu {
-    display: block;
-    background-color: rgb(82, 211, 82);
-}
-
-.cart {
-    display: none;
-    background-color: beige;
-}
-
-.receipt {
-    display: none;
-    background-color: rgb(214, 77, 77);
-}

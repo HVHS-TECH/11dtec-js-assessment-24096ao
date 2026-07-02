@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Menu</title>
+    <title id="title"> </title>
     <link rel="styleSheet" href="style.css">
 </head>
 
@@ -18,9 +18,8 @@
     
     <main>
         <!--**************************************Menu***************************************************************-->
-        <div class="menu" id="menu">
-
-<div class="foods">
+<div class="menu" id="menu">
+    <div class="foods">
 
             <div class="foodHeading">
                 <h1>food Heading</h1>
@@ -32,6 +31,7 @@
                 <p>English Breakfast</p>
 
                 <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">Add item</button>
+                <button class="removeItem" onClick="removeItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">remove item</button>
             </div>
 
             <div class="food">
@@ -40,6 +40,7 @@
                 <p>waffle</p>
 
                 <button class="addItem" onClick="addedItem(waffle.name, waffle.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(waffle.name, waffle.price)">remove item</button>
             </div>
 
             <div class="food">
@@ -48,6 +49,7 @@
                 <p>pankake</p>
 
                 <button class="addItem" onClick="addedItem(pancake.name, pancake.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(pancake.name, pancake.price)">remove item</button>
             </div>
 
             <div class="food">
@@ -56,6 +58,7 @@
                 <p>bagle</p>
 
                 <button class="addItem" onClick="addedItem(bagle.name, bagle.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(bagle.name, bagle.price)">remove item</button>
             </div>
 
             <div class="food">
@@ -64,96 +67,152 @@
                 <p>sandwich</p>
 
                 <button class="addItem" onClick="addedItem(sandwich.name, sandwich.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(sandwich.name, sandwich.price)">remove item</button>
             </div>
-</div>
+    </div>
 
 
 <div class="drinks">
             <div class="drinkHeading">
-                <h1>drink Heading</h1>
+                <h1>Drinks</h1>
             </div>
 
             <div class="drink">
                 <img>
 
-                <p>drink 1</p>
+                <p>espresso</p>
 
-                <button class="addDrink1" onClick="addedItem(cofee.name, sandwich.price)">Add item</button>
+                <button class="addDrink" onClick="addedItem(espresso.name, espresso.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(espresso.name, espresso.price)">remove item</button>
             </div>
 
             <div class="drink">
                 <img>
 
-                <p>drink 1</p>
+                <p>Double espresso</p>
 
-                <button class="addDrink2" onClick="addDrink2()">Add item</button>
-            </div>
-            
-            <div class="drink">
-                <img>
-
-                <p>drink 3</p>
-
-                <button class="addDrink3" onClick="addDrink3()">Add item</button>
+                <button class="addDrink" onClick="addedItem(doubleEspresso.name, doubleEspresso.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(doubleEspresso.name, doubleEspresso.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 4</p>
+                <p>Macchiato</p>
 
-                <button class="addDrink4" onClick="addDrink4()">Add item</button>
+                <button class="addDrink" onClick="addedItem(macchiato.name, macchiato.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(macchiato.name, macchiato.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 5</p>
+                <p>Ristretto</p>
 
-                <button class="addDrink5" onClick="addDrink5()">Add item</button>
+                <button class="addDrink" onClick="addedItem(ristretto.name, ristretto.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(ristretto.name, ristretto.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 6</p>
+                <p>long black</p>
 
-                <button class="addDrink6" onClick="addDrink6()">Add item</button>
+                <button class="addDrink" onClick="addedItem(longBlack.name, longBlack.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(longBlack.name, longBlack.price)">remove item</button>
+            </div>
+            
+            <div class="drink">
+                <img>
+
+                <p>caffe latte</p>
+
+                <button class="addDrink" onClick="addedItem(caffeLatte.name, caffeLatte.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(caffeLatte.name, caffeLatte.price)">remove item</button>
             </div>
 
              <div class="drink">
                 <img>
 
-                <p>drink 7</p>
+                <p>cappuccino</p>
 
-                <button class="addDrink7" onClick="addDrink7()">Add item</button>
+                <button class="addDrink" onClick="addedItem(cappuccino.name, cappuccino.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(cappuccino.name, cappuccino.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 8</p>
+                <p>flat white</p>
 
-                <button class="addDrink8" onClick="addDrink8()">Add item</button>
+                <button class="addDrink" onClick="addedItem(flatWhite.name, flatWhite.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(flatWhite.name, flatWhite.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 9</p>
+                <p>ice coffee</p>
 
-                <button class="addDrink9" onClick="addDrink9()">Add item</button>
+                <button class="addDrink" onClick="addedItem(iceCoffee.name, iceCoffee.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(iceCoffee.name, iceCoffee.price)">remove item</button>
             </div>
             
             <div class="drink">
                 <img>
 
-                <p>drink 10</p>
+                <p>hot chocolate</p>
 
-                <button class="addDrink10" onClick="addDrink10()">Add item</button>
+                <button class="addDrink" onClick="addedItem(hotChocolate.name, hotChocolate.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(hotChocolate.name, hotChocolate.price)">remove item</button>
             </div>
+
+            <div class="drink">
+                <img>
+
+                <p>berry smoothie</p>
+
+                <button class="addDrink" onClick="addedItem(berrySmoothie.name, berrySmoothie.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(berrySmoothie.name, berrySmoothie.price)">remove item</button>
+            </div>
+
+            <div class="drink">
+                <img>
+
+                <p>Feijoa smoothie</p>
+
+                <button class="addDrink" onClick="addedItem(feijoaSmoothie.name, feijoaSmoothie.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(feijoaSmoothie.name, feijoaSmoothie.price)">remove item</button>
+            </div>
+
+            <div class="drink">
+                <img>
+
+                <p>water</p>
+
+                <button class="addDrink" onClick="addedItem(water.name, water.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(water.name, water.price)">remove item</button>
+            </div>
+
+            <div class="drink">
+                <img>
+
+                <p>apple juice</p>
+
+                <button class="addDrink" onClick="addedItem(appleJuice.name, appleJuice.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(appleJuice.name, appleJuice.price)">remove item</button>
+            </div>
+
+            <div class="drink">
+                <img>
+
+                <p>orange juice</p>
+
+                <button class="addDrink" onClick="addedItem(orangeJuice.name, orangeJuice.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(orangeJuice.name, orangeJuice.price)"></button>
+            </div>
+    </div> 
 </div>
-        </div>
 
     <!--************************************************cart*****************************************-->
 
