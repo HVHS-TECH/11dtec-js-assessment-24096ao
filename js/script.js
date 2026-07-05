@@ -14,14 +14,25 @@ const OUTPUT = document.getElementById("items");
 const TOTAL = document.getElementById("total");
 const ITEM_LIST = document.getElementById("itemList");
 const RECEIPT_OUTPUT = document.getElementById("receiptOutput");
+const RECEIPT_FORM = document.getElementById("receiptForm");
 
 const TITLE = document.getElementById("title");
-TITLE.innerHTML = "Menu";
+TITLE.innerHTML = "home";
+
+//nav btns
+let showReceiptBtn = document.getElementById("showReceiptBtn");
+let showCartBtn = document.getElementById("showCartBtn");
+let showMenuBtn = document.getElementById("showMenuBtn");
+let showHomeBtn = document.getElementById("showHomeBtn");
+
+//auto hide home btn
+showHomeBtn.style.display = "none";
 
 //nav
 let menu = document.getElementById("menu");
 let cart = document.getElementById("cart");
 let receipt = document.getElementById("receipt");
+let home = document.getElementById("home");
 
 //total
 let totalPrice = 0;
@@ -30,7 +41,8 @@ let totalPrice = 0;
 let userMoney = Number(USER_MONEY.value);
 let userName = String(USER_NAME.value);
 
-let change = userMoney-totalPrice;
+//change
+let change = userMoney - totalPrice;
 
 /***************food*******************/
 let EnglishBreakfast = {
@@ -167,50 +179,92 @@ function removeItem(_product, _price) {
 function order() {
     if (userMoney < totalPrice || userMoney < 0 || change < -1) {
         console.log("You havent payed enough!");
-        RECEIPT_OUTPUT.innerHTML = "<p>You haven't entered enough money!</p>";
+        RECEIPT_OUTPUT.innerHTML = "<p>You havent payed enough!</p>";
         return; 
     }
 
-    console.log(change, userMoney, totalPrice);
+    if (RECEIPT_FORM.checkValidity() == false) {
+        console.log("You havent payed enough!");
+        RECEIPT_OUTPUT.innerHTML = "<p>Please fill in the form correctly</p>";
+        return; 
+    }
+
+    if (SHOPPING_LIST.length < 1) {
+        RECEIPT_OUTPUT.innerHTML = "<p>you havent ordered anything</p>"
+        return;
+    }
+
+    console.log(userMoney, change, totalPrice);
     console.log("Order placed");
     console.log("you ordered "+SHOPPING_LIST);
     console.log("The total is "+totalPrice);
     console.log("your change is " +change);
 
-    RECEIPT_OUTPUT.innerHTML += "<p>Hello "+userName+"!</p>";
+    RECEIPT_OUTPUT.innerHTML += "<p>Thanks "+userName+", your order has been placed</p>";
     RECEIPT_OUTPUT.innerHTML += "<p>You ordered " +SHOPPING_LIST+ "</p>";
     RECEIPT_OUTPUT.innerHTML += "<p> The total price is $"+totalPrice+"</p>";
-    RECEIPT_OUTPUT.innerHTML += "<p>Your change is " +change+ "</p>";
+    RECEIPT_OUTPUT.innerHTML += "<p>Your change is $" +change+ "</p>";
 }
 
 /**********************nav****************************/
+
+function showHome() {
+    //Show cart
+    console.log("Show cart");
+    menu.style.display = "none";
+    cart.style.display = " none";
+    receipt.style.display = "none";
+    home.style.display = "block";
+    TITLE.innerHTML = "home";
+    showReceiptBtn.style.display = "block";
+    showCartBtn.style.display = "block";
+    showMenuBtn.style.display = "block";
+    showHomeBtn.style.display = "none";    
+}
+
 /******************show cart************/
 function showCart() {
     //Show cart
-    console.log("hide menu");
-    menu.style.display="none";
-    cart.style.display="block";
-    receipt.style.display="none";
+    console.log("Show cart");
+    menu.style.display = "none";
+    cart.style.display = "block";
+    receipt.style.display = "none";
+    home.style.display = "none";
     TITLE.innerHTML = "Cart";
+    showReceiptBtn.style.display = "block";
+    showCartBtn.style.display = "none";
+    showMenuBtn.style.display = "block";
+    showHomeBtn.style.display = "block";    
 }
 
 /**************show menu***********/
 function showMenu() {
     //show menu
-    console.log("hide cart");
-    menu.style.display="block";
-    cart.style.display="none";
-    receipt.style.display="none";
+    console.log("Show Menu");
+    menu.style.display = "block";
+    cart.style.display = "none";
+    receipt.style.display = "none";
+    home.style.display = "none";
     TITLE.innerHTML = "Menu";
+    showReceiptBtn.style.display = "block";
+    showCartBtn.style.display = "block";
+    showMenuBtn.style.display = "none";
+    showHomeBtn.style.display = "block";    
 }
 
 /**********show receipt********/
 function showReceipt() {
     //show receipt
+    console.log("Show receipt");
     menu.style.display = "none";
     cart.style.display = "none";
     receipt.style.display = "block";
+    home.style.display = "none";
     TITLE.innerHTML = "Receipt";
+    showReceiptBtn.style.display = "none";
+    showCartBtn.style.display = "block";
+    showMenuBtn.style.display = "block";
+    showHomeBtn.style.display = "block";    
 }
 
 /****************************

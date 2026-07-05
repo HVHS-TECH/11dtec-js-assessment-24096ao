@@ -1,6 +1,6 @@
 /***********************************hide & show***************************************/
 .menu {
-    display: block;
+    display: none;
     background-color: #efd5c3;
 }
 
@@ -14,6 +14,29 @@
     display: none;
     background-color: #efd5c3;
 }
+
+.home {
+    display: block;
+}
+
+
+
+
+.showHomeBtn {
+    display: none;
+}
+
+.showReceiptBtn {
+    display:block;
+}
+
+.showCartBtn {
+    display: block;
+}
+
+.showMenuBtn {
+    display: block;
+} 
 /***********************************hide & show end***************************************/
 
 /* dark brown / 30% --> b1887f */
@@ -23,7 +46,6 @@
 
 /****************************Nav*********************************/
 nav {
-    text-decoration-line: none;
     background-color:#b1887f;
 }
 
@@ -55,6 +77,19 @@ body {
     background-color: #efd5c3;
 }
 
+button {
+    border-color: #00c3ff;
+    background: #00c3ff;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.removeItem {
+    border-color: #96d5ff;
+    background: #96d5ff;
+}
+
 /****************************Drinks & food*********************************/
 .drinks, .foods {
     background-color: #b1887f;
@@ -77,9 +112,9 @@ body {
 }
 
 .drink, .food {
-    background-color: #00c3ff;
+    background-color: #b1887f;
     padding: 20px;
-    border: solid 2px black;
+    border: solid 5px #efd5c3;
     margin: 30px;
 }
 
@@ -111,6 +146,12 @@ body {
     background-color: #efd5c3;
     padding: 10px;
     margin: 10px;
+}
+
+.placeOrder {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /**********************************Cart end****************************************/
@@ -147,7 +188,7 @@ body {
     margin: 10px;
 }
 
-.receiptForm input {
+.receiptForm input{
     background-color: #00c3ff;
     padding: 10px;
     margin: 10px;
