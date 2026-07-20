@@ -9,9 +9,9 @@
 <body>
     <nav>
         <ul>
-            <li id="showCartBtn"><a onClick="showCart()" value="cart">Cart</a></li>
-            <li id="showMenuBtn"><a onClick="showMenu()" value="menu">Menu</a></li>
-            <li id="showHomeBtn" ><a onclick="showHome()" value="home">Home</a></li>
+            <li><a class="showCartBtn" id="showCartBtn" onClick="showCart()" value="cart">Cart</a></li>
+            <li><a class="showMenuBtn" id="showMenuBtn"onClick="showMenu()" value="menu">Menu</a></li>
+            <li><a class="showHomeBtn" id="showHomeBtn" onclick="showHome()" value="home">Home</a></li>
         </ul>
     </nav>
     
@@ -248,7 +248,9 @@
                     
                 </div>
 
+                <button id="backBtn" class="backBtn" onClick="showMenu()">Back</button>
                 <button class="placeOrder" onClick="showReceipt()">place order</a></button>
+
         </div>
 
 <!--************************************************receipt*****************************************-->
@@ -274,7 +276,8 @@
                         <lable for="userMoney">Pay here: </lable>
                         <input type="number" id="userMoneyField" class="userMoney" name="formUserMoney" required>
                         <br>
-                        <input id="submit" type="Submit" onClick="order()">
+                        <button id="backBtn" class="backBtn" onClick="showCart()">Back</button>
+                        <button id="submit" class="submit" type="Submit" onClick="order()">Submit</button>
                 </form>
             </div>
 

@@ -26,10 +26,6 @@
     display: none;
 }
 
-.showReceiptBtn {
-    display:block;
-}
-
 .showCartBtn {
     display: block;
 }
@@ -39,10 +35,13 @@
 } 
 /***********************************hide & show end***************************************/
 
-/* dark brown / 30% --> b1887f */
-/* light brown / 60% --> efd5c3 */
-/* blue / 10% --> 00c3ff */
-/* light blue / hover --> 96d5ff */
+/* 
+dark brown / 30% --> b1887f
+light brown / 60% --> efd5c3
+blue / 10% --> 00c3ff
+light blue --> afccdf
+hover --> 88e3ff 
+*/
 
 /****************************Nav*********************************/
 nav {
@@ -68,7 +67,7 @@ ul li a {
 }
 
 ul li a:hover {
-    background-color: #96d5ff;
+    background-color: #88e3ff;
 }
 
 /****************************nav end******************************/
@@ -85,9 +84,14 @@ button {
     font-size: 15px;
 }
 
+button:hover {
+    background: #88e3ff;
+    border-color: #88e3ff;
+}
+
 .removeItem {
-    border-color: #96d5ff;
-    background: #96d5ff;
+    border-color: #afccdf;
+    background: #afccdf;
 }
 
 /****************************Drinks & food*********************************/
@@ -148,10 +152,19 @@ button {
     margin: 10px;
 }
 
-.placeOrder {
+.placeOrder, .submit {
+    padding: 18px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #afccdf;
+    border-color: #afccdf;
+}
+
+.backBtn {
     padding: 20px;
     font-weight: bold;
     font-size: 20px;
+    background-color: #00c3ff;
 }
 
 /**********************************Cart end****************************************/

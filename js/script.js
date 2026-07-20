@@ -20,7 +20,6 @@ const TITLE = document.getElementById("title");
 TITLE.innerHTML = "home";
 
 //nav btns
-let showReceiptBtn = document.getElementById("showReceiptBtn");
 let showCartBtn = document.getElementById("showCartBtn");
 let showMenuBtn = document.getElementById("showMenuBtn");
 let showHomeBtn = document.getElementById("showHomeBtn");
@@ -43,6 +42,10 @@ let userName = String(USER_NAME.value);
 
 //change
 let change = userMoney - totalPrice;
+
+
+//https://stackoverflow.com/questions/9817042/adding-a-button-with-innerhtml-property
+var newButton = document.createElement("newButton");
 
 /***************food*******************/
 let EnglishBreakfast = {
@@ -139,6 +142,8 @@ functions
 /***********************************Add items*********************************/
 function addedItem(_product, _price) {
 
+    
+
     totalPrice = totalPrice + _price;
     SHOPPING_LIST.push(" "+_product);
     
@@ -149,6 +154,7 @@ function addedItem(_product, _price) {
     console.log("list: " + SHOPPING_LIST);
     
     OUTPUT.innerHTML += "<p>You added " +_product+" = $"+_price+"</p>";
+    OUTPUT.innerHTML += 
     TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
     ITEM_LIST.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
@@ -157,7 +163,7 @@ function addedItem(_product, _price) {
 /***********************************remove items*********************************/
 function removeItem(_product, _price) {
     if (SHOPPING_LIST.length < 1 || totalPrice < 0) {
-        OUTPUT.innerHTML += "<p>You do not have any items to remove</p>";
+        OUTPUT.innerHTML = "<p>You do not have any items to remove</p>";
         ITEM_LIST.innerHTML = "<p>You do not have any items to remove</p>";
         return;
     }
@@ -189,7 +195,7 @@ function order() {
         return; 
     }
 
-    if (SHOPPING_LIST.length < 1) {
+    while (SHOPPING_LIST.length < 1) {
         RECEIPT_OUTPUT.innerHTML = "<p>you havent ordered anything</p>"
         return;
     }
@@ -216,7 +222,6 @@ function showHome() {
     receipt.style.display = "none";
     home.style.display = "block";
     TITLE.innerHTML = "home";
-    showReceiptBtn.style.display = "block";
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "none";    
@@ -231,7 +236,6 @@ function showCart() {
     receipt.style.display = "none";
     home.style.display = "none";
     TITLE.innerHTML = "Cart";
-    showReceiptBtn.style.display = "block";
     showCartBtn.style.display = "none";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "block";    
@@ -246,7 +250,6 @@ function showMenu() {
     receipt.style.display = "none";
     home.style.display = "none";
     TITLE.innerHTML = "Menu";
-    showReceiptBtn.style.display = "block";
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "none";
     showHomeBtn.style.display = "block";    
