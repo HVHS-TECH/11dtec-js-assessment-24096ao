@@ -41,11 +41,7 @@ let userMoney = Number(USER_MONEY.value);
 let userName = String(USER_NAME.value);
 
 //change
-let change = userMoney - totalPrice;
-
-
-//https://stackoverflow.com/questions/9817042/adding-a-button-with-innerhtml-property
-var newButton = document.createElement("newButton");
+let change = 0;
 
 /***************food*******************/
 let EnglishBreakfast = {
@@ -142,8 +138,6 @@ functions
 /***********************************Add items*********************************/
 function addedItem(_product, _price) {
 
-    
-
     totalPrice = totalPrice + _price;
     SHOPPING_LIST.push(" "+_product);
     
@@ -154,7 +148,7 @@ function addedItem(_product, _price) {
     console.log("list: " + SHOPPING_LIST);
     
     OUTPUT.innerHTML += "<p>You added " +_product+" = $"+_price+"</p>";
-    OUTPUT.innerHTML += 
+
     TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
     ITEM_LIST.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
@@ -183,7 +177,9 @@ function removeItem(_product, _price) {
 
 /***********************************order*********************************/
 function order() {
-    if (userMoney < totalPrice || userMoney < 0 || change < -1) {
+    change = userMoney - totalPrice;
+
+    if (userMoney < totalPrice || userMoney < 0 || change <= -1) {
         console.log("You havent payed enough!");
         RECEIPT_OUTPUT.innerHTML = "<p>You havent payed enough!</p>";
         return; 
