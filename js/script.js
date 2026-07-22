@@ -40,9 +40,6 @@ let totalPrice = 0;
 let userMoney = Number(USER_MONEY.value);
 let userName = String(USER_NAME.value);
 
-//change
-let change = 0;
-
 /***************food*******************/
 let EnglishBreakfast = {
     name: "english breakfast",
@@ -152,16 +149,11 @@ function addedItem(_product, _price) {
     TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
     ITEM_LIST.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
+
 }
 
 /***********************************remove items*********************************/
 function removeItem(_product, _price) {
-    if (SHOPPING_LIST.length < 1 || totalPrice < 0) {
-        OUTPUT.innerHTML = "<p>You do not have any items to remove</p>";
-        ITEM_LIST.innerHTML = "<p>You do not have any items to remove</p>";
-        return;
-    }
-    
     SHOPPING_LIST.splice(_product, 1);
     totalPrice = totalPrice - _price;
 
@@ -173,11 +165,19 @@ function removeItem(_product, _price) {
 
     OUTPUT.innerHTML += "<p>You have removed 1 " +_product+"</p>";
     ITEM_LIST.innerHTML += "<p>You removed 1 " +_product+"</p>";
+    TOTAL.innerHTML = "<p>The total price is now "+totalPrice+"</p>"
+
+    if (SHOPPING_LIST.length < 1 || totalPrice < 0) {
+        OUTPUT.innerHTML = "<p>You do not have any items to remove</p>";
+        ITEM_LIST.innerHTML = "<p>You do not have any items to remove</p>";
+        alert("You can not remove any more of this item");
+        return;
+    }
 }
 
 /***********************************order*********************************/
 function order() {
-    change = userMoney - totalPrice;
+    let change = userMoney - totalPrice;
 
     if (userMoney < totalPrice || userMoney < 0 || change <= -1) {
         console.log("You havent payed enough!");
@@ -217,7 +217,7 @@ function showHome() {
     cart.style.display = " none";
     receipt.style.display = "none";
     home.style.display = "block";
-    TITLE.innerHTML = "home";
+    TITLE.innerHTML = "Home page";
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "none";    
@@ -231,7 +231,7 @@ function showCart() {
     cart.style.display = "block";
     receipt.style.display = "none";
     home.style.display = "none";
-    TITLE.innerHTML = "Cart";
+    TITLE.innerHTML = "Your cart";
     showCartBtn.style.display = "none";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "block";    

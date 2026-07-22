@@ -10,7 +10,7 @@
     <nav>
         <ul>
             <li><a class="showCartBtn" id="showCartBtn" onClick="showCart()" value="cart">Cart</a></li>
-            <li><a class="showMenuBtn" id="showMenuBtn"onClick="showMenu()" value="menu">Menu</a></li>
+            <li><a class="showMenuBtn" id="showMenuBtn" onClick="showMenu()" value="menu">Menu</a></li>
             <li><a class="showHomeBtn" id="showHomeBtn" onclick="showHome()" value="home">Home</a></li>
         </ul>
     </nav>
@@ -19,20 +19,14 @@
 <!--**************************************home pg***************************************************************-->
         <div class="home" id="home">
             <div class="ImgHeading">
-                <h1>img home Heading</h1>
+                <h1>Cafe name</h1>
+                <img src="img/cafeMainImg.jpg" alt="cafe main img">
             </div>
 
             <div class="paragraph">
-                <p>This is a paragraph.</p>
+                <p>we serve food and drinks!</p>
             </div>
 
-            <div class="smallImg">
-                <p>img</p>
-            </div>
-
-            <div class="smallParagraph">
-                <p>small paragraph</p>
-            </div>
         </div>
     
 <!--**************************************Menu***************************************************************-->
@@ -44,16 +38,16 @@
             </div>
 
             <div class="food">
-                <img src="" alt="English Breakfast">
+                <img src="img/englishBreakfast.jpg" alt="English Breakfast">
                 
                 <p>English Breakfast</p>
 
-                <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">Add item</button>
-                <button class="removeItem" onClick="removeItem(EnglishBreakfast.name, EnglishBreakfast.price, +1)">remove item</button>
+                <button class="addItem" onClick="addedItem(EnglishBreakfast.name, EnglishBreakfast.price)">Add item</button>
+                <button class="removeItem" onClick="removeItem(EnglishBreakfast.name, EnglishBreakfast.price)">remove item</button>
             </div>
 
             <div class="food">
-                <img>
+                <img src="img/wafles.jpg" alt="waffles">
 
                 <p>waffle</p>
 
@@ -62,7 +56,7 @@
             </div>
 
             <div class="food">
-                <img>
+                <img src="img/pancakes.jpg" alt="pancakes">
 
                 <p>pankake</p>
 
@@ -71,7 +65,7 @@
             </div>
 
             <div class="food">
-                <img>
+                <img src="img/bagles.jpg" alt="bagles">
 
                 <p>bagle</p>
 
@@ -80,7 +74,7 @@
             </div>
 
             <div class="food">
-                <img>
+                <img src="img/sandwich.jpg" alt="sandwich">
 
                 <p>sandwich</p>
 
@@ -96,7 +90,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/espresso.jpg" alt="espresso">
 
                 <p>espresso</p>
 
@@ -105,7 +99,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/doubbleEspresso.jpg" alt="doubble Espresso">
 
                 <p>Double espresso</p>
 
@@ -114,7 +108,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/macchiato.jpg" alt="macchiato">
 
                 <p>Macchiato</p>
 
@@ -123,7 +117,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/ristretto.jpg" alt="ristretto">
 
                 <p>Ristretto</p>
 
@@ -132,7 +126,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/longBlack.jpg" alt="long Black">
 
                 <p>long black</p>
 
@@ -141,7 +135,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/caffeLatte.jpg" alt="caffe Latte">
 
                 <p>caffe latte</p>
 
@@ -150,7 +144,7 @@
             </div>
 
              <div class="drink">
-                <img>
+                <img src="img/cappuccino.jpg" alt="cappuccino">
 
                 <p>cappuccino</p>
 
@@ -159,7 +153,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/flatWhite.jpg" alt="flat White">
 
                 <p>flat white</p>
 
@@ -168,7 +162,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/iceCoffee.jpg" alt="ice Coffee">
 
                 <p>ice coffee</p>
 
@@ -177,7 +171,7 @@
             </div>
             
             <div class="drink">
-                <img>
+                <img src="img/hotChocolate.jpg" alt="hot Chocolate">
 
                 <p>hot chocolate</p>
 
@@ -186,7 +180,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/berrySmoothie.jpg" alt="berry Smoothie">
 
                 <p>berry smoothie</p>
 
@@ -195,7 +189,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/feijoaSmoothie.jpg" alt="feijoa Smoothie">
 
                 <p>Feijoa smoothie</p>
 
@@ -204,7 +198,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/water.jpg" alt="water">
 
                 <p>water</p>
 
@@ -213,7 +207,7 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/appleJuice.jpg" alt="apple Juice">
 
                 <p>apple juice</p>
 
@@ -222,13 +216,44 @@
             </div>
 
             <div class="drink">
-                <img>
+                <img src="img/orangeJuice.jpg" alt="orange Juice">
 
                 <p>orange juice</p>
 
                 <button class="addDrink" onClick="addedItem(orangeJuice.name, orangeJuice.price)">Add item</button>
                 <button class="removeItem" onClick="removeItem(orangeJuice.name, orangeJuice.price)"></button>
             </div>
+
+
+            <!--Credits-->
+            <div class="credits">
+                <h4>Image credits</h4>
+                    <p>
+                    english breakfast: Photo by Ajeet Panesar on Unsplash <br>
+                    Waffle: Photo by joyful on Unsplash <br>
+                    pancake: Photo by nikldn on Unsplash <br>
+                    bagle: Photo by Erwan NONON on Unsplash <br>
+                    sandwich: Photo by Pille R. Priske on Unsplash
+                    </p>
+
+                    <p>
+                    espresso: Photo by Jarek Ceborski on Unsplash <br>
+                    double espresso: Photo by Jonas Jacobsson on Unsplash <br>
+                    Macchiato: Photo by Andy Barbosa on Unsplash <br>
+                    Ristretto: Photo by nitin pariyar on Unsplash <br>
+                    long black: Photo by Ben Kolde on Unsplash <br>
+                    cafe latte: Photo by Lex Sirikiat on Unsplash <br>
+                    cappuccino: Photo by Pablo Merchán Montes on Unsplash <br>
+                    ice coffee: Photo by Demi DeHerrera on Unsplash <br>
+                    hot chocolate: Photo by Elena Leya on Unsplash <br>
+                    berry smoothie: Photo by Denis on Unsplash <br>
+                    fejoia smoothie: Photo by Julia Zyablova on Unsplash <br>
+                    water: Photo by Giorgio Trovato on Unsplash <br>
+                    apple juice: Photo by Richard Wang on Unsplash <br>
+                    orange juice: Photo by ABHISHEK HAJARE on Unsplash
+                    </p>
+            </div>
+
         </div> 
     </div>
 
@@ -249,7 +274,7 @@
                 </div>
 
                 <button id="backBtn" class="backBtn" onClick="showMenu()">Back</button>
-                <button class="placeOrder" onClick="showReceipt()">place order</a></button>
+                <button class="placeOrder" onClick="showReceipt()">place order</button>
 
         </div>
 
@@ -271,7 +296,7 @@
             <div class="receiptForm">
                 <form id="receiptForm" onsubmit="return false;">
                         <lable for="userName">Name: </lable>
-                        <input type="string" id="userNameField" class="userName name="formUserName" required>
+                        <input type="text" id="userNameField" class="userName name="formUserName" required>
                         <br>
                         <lable for="userMoney">Pay here: </lable>
                         <input type="number" id="userMoneyField" class="userMoney" name="formUserMoney" required>
@@ -285,10 +310,6 @@
 
     </main>
 
-    <footer>
-
-    </footer>
-
 <script src="js/script.js"></script>
 </body>
 
@@ -296,28 +317,28 @@
 
 
 <!-- 
-Food
-    english breakfast: Photo by Ajeet Panesar on Unsplash
-    Waffle: Photo by joyful on Unsplash
-    pancake: Photo by nikldn on Unsplash
-    bagle: Photo by Erwan NONON on Unsplash
-    sandwich: Photo by Pille R. Priske on Unsplash
--->
-
-<!--
-Drinks
-    espresso:  Jarek Ceborski
-    double espresso: Jonas Jacobsson
-    Macchiato: Andy Barbosa
-    Ristretto: nitin pariyar 
-    long black: Ben Kolde
-    cafe latte: Lex Sirikiat 
-    cappuccino: Pablo Merchán Montes
-    ice coffee: Demi DeHerrera 
-    hot chocolate: Elena Leya
-    berry smoothie: Denis
-    fejoia smoothie: Julia Zyablova 
-    water: Giorgio Trovato 
-    apple juice:
-    orange juice
+Img credits
+    Food
+        english breakfast: Photo by Ajeet Panesar on Unsplash
+        Waffle: Photo by joyful on Unsplash
+        pancake: Photo by nikldn on Unsplash
+        bagle: Photo by Erwan NONON on Unsplash
+        sandwich: Photo by Pille R. Priske on Unsplash
+        
+    Drinks
+        espresso: Photo by Jarek Ceborski on Unsplash
+        double espresso: Photo by Jonas Jacobsson on Unsplash
+        Macchiato: Photo by Andy Barbosa on Unsplash
+        Ristretto: Photo by nitin pariyar on Unsplash 
+        long black: Photo by Ben Kolde on Unsplash
+        flat white: Photo by Joe Hepburn on Unsplash
+        cafe latte: Photo by Lex Sirikiat on Unsplash 
+        cappuccino: Photo by Pablo Merchán Montes on Unsplash
+        ice coffee: Photo by Demi DeHerrera on Unsplash 
+        hot chocolate: Photo by Elena Leya on Unsplash
+        berry smoothie: Photo by Denis on Unsplash
+        fejoia smoothie: Photo by Julia Zyablova on Unsplash 
+        water: Photo by Giorgio Trovato on Unsplash 
+        apple juice: Photo by Richard Wang on Unsplash
+        orange juice: Photo by ABHISHEK HAJARE on Unsplash
 -->
