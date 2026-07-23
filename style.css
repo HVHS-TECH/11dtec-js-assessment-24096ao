@@ -53,6 +53,9 @@ hover --> 88e3ff
 /****************************Nav*********************************/
 nav {
     background-color:#b1887f;
+    Border: 4px solid #efd5c3;
+    position: sticky;
+    top: 0;
 }
 
 ul{
@@ -79,6 +82,8 @@ ul li a:hover {
 
 /****************************nav end******************************/
 
+
+/****************************body & misc******************************/
 body {
     background-color: #efd5c3;
 }
@@ -104,6 +109,7 @@ button:hover {
 .smallImg {
     align-items: center;
 }
+/****************************body & misc end******************************/
 
 /****************************Drinks & food*********************************/
 .drinks, .foods {

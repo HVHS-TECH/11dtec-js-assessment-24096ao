@@ -1,8 +1,10 @@
 /****************************
-menuScript.js
+script.js
 ****************************/
-console.log("Running menuScript.js");
+console.log("Running script.js");
 
+/***************const*************/
+//shopping list
 const SHOPPING_LIST = [ ];
 
 //fields
@@ -11,13 +13,19 @@ const USER_MONEY = document.getElementById("userMoneyField");
 
 //innerhtml
 const OUTPUT = document.getElementById("items");
+//total is in cart
 const TOTAL = document.getElementById("total");
 const ITEM_LIST = document.getElementById("itemList");
 const RECEIPT_OUTPUT = document.getElementById("receiptOutput");
 const RECEIPT_FORM = document.getElementById("receiptForm");
 
+//title
 const TITLE = document.getElementById("title");
+//auto show title home
 TITLE.innerHTML = "home";
+
+
+/***************let*************/
 
 //nav btns
 let showCartBtn = document.getElementById("showCartBtn");
@@ -36,11 +44,14 @@ let home = document.getElementById("home");
 //total
 let totalPrice = 0;
 
-//user info
+//user money
 let userMoney = Number(USER_MONEY.value);
+
+//user name
 let userName = String(USER_NAME.value);
 
-/***************food*******************/
+
+/***************food*************/
 let EnglishBreakfast = {
     name: "english breakfast",
     price: 20
@@ -62,7 +73,7 @@ let sandwich = {
     price: 10
 };
 
-/*****************drinks*****************/
+/***************drinks*************/
 let espresso = {
     name: "espresso",
     price: 2
@@ -124,75 +135,112 @@ let orangeJuice =  {
     price: 2.50
 };
 
-/****************************
-Main code
-****************************/
+
 
 
 /****************************
 functions
 ****************************/
-/***********************************Add items*********************************/
+/******************************************************Add items***************************************************/
+//when clicked adds item to array + price
 function addedItem(_product, _price) {
+    //alerts user
+    alert("Added "+_product+" for $" +_price);
 
-    totalPrice = totalPrice + _price;
+    //adds price & product to list
     SHOPPING_LIST.push(" "+_product);
+    totalPrice = totalPrice + _price;
     
+    //console log
     console.log(" ");
     console.log("you added " + _product);
     console.log(_product + " costs: " + _price);
     console.log("the total price is " + totalPrice + " dollars");
     console.log("list: " + SHOPPING_LIST);
     
-    OUTPUT.innerHTML += "<p>You added " +_product+" = $"+_price+"</p>";
 
+    OUTPUT.innerHTML += "<p>You added " +_product+" = $"+_price+"</p>";
+    //total is in cart
     TOTAL.innerHTML = "<p>The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
     ITEM_LIST.innerHTML += "<p>" +_product+" = $"+_price+"</p>";
 
 }
 
-/***********************************remove items*********************************/
+
+/******************************************************remove items***************************************************/
+//when clicked romoves item & price
 function removeItem(_product, _price) {
-    SHOPPING_LIST.splice(_product, 1);
+    //will make sure price doesnt go below 0 & warns user no more items to remove
+    if (SHOPPING_LIST.length <= 1 || totalPrice <= 0 ) {
+        //alerts user
+        alert("You can not romove any more of this item");
+        
+        OUTPUT.innerHTML = "<p>You do not have any items to remove</p>";
+        ITEM_LIST.innerHTML = "<p>You do not have any items to remove</p>";
+        //total is in cart
+        TOTAL.innerHTML = "<p>The total price is now $0</p>";
+
+        return;
+    }
+    
+    //alerts user
+    alert("removed "+_product);
+
+    //removes product & price
+    SHOPPING_LIST.splice(_product);
     totalPrice = totalPrice - _price;
 
+    //console log
     console.log(" ");
     console.log("you removed " + _product);
     console.log(_product + " costs: " + _price);
     console.log("the total price is now $" + totalPrice + " dollars");
     console.log("list: " + SHOPPING_LIST);
 
+
     OUTPUT.innerHTML += "<p>You have removed 1 " +_product+"</p>";
     ITEM_LIST.innerHTML += "<p>You removed 1 " +_product+"</p>";
-    TOTAL.innerHTML = "<p>The total price is now "+totalPrice+"</p>"
-
-    if (SHOPPING_LIST.length < 1 || totalPrice < 0) {
-        OUTPUT.innerHTML = "<p>You do not have any items to remove</p>";
-        ITEM_LIST.innerHTML = "<p>You do not have any items to remove</p>";
-        alert("You can not remove any more of this item");
-        return;
-    }
+    //total is in cart
+    TOTAL.innerHTML = "<p>The total price is now "+totalPrice+"</p>";
 }
 
-/***********************************order*********************************/
+
+/******************************************************order***************************************************/
+//Calculates change and makes sure receipt is correct
 function order() {
+    //change
     let change = userMoney - totalPrice;
 
-    if (userMoney < totalPrice || userMoney < 0 || change <= -1) {
+    //makes sure user entered enough money
+    if (userMoney < totalPrice-0.1 || userMoney < 0 || change <= -1) {
         console.log("You havent payed enough!");
         RECEIPT_OUTPUT.innerHTML = "<p>You havent payed enough!</p>";
         return; 
     }
 
+    if (SHOPPING_LIST.length >= 21) {
+        console.log("You have ordered too much!");
+        RECEIPT_OUTPUT.innerHTML = "<p>You have ordered too much!</p>";
+        RECEIPT_OUTPUT.innerHTML = "<p>Please romove some items</p>";
+        return; 
+    }
+
+    if (userMoney >= 301) {
+        console.log("You have payed too much!");
+        RECEIPT_OUTPUT.innerHTML = "<p>You have payed too much!</p>";
+        return; 
+    }
+
+    //makes sure user entered form
     if (RECEIPT_FORM.checkValidity() == false) {
-        console.log("You havent payed enough!");
         RECEIPT_OUTPUT.innerHTML = "<p>Please fill in the form correctly</p>";
         return; 
     }
 
-    while (SHOPPING_LIST.length < 1) {
-        RECEIPT_OUTPUT.innerHTML = "<p>you havent ordered anything</p>"
+    //makes sure user has ordered anything
+    if (SHOPPING_LIST.length < 1) {
+        RECEIPT_OUTPUT.innerHTML = "<p>you havent ordered anything</p>";
         return;
     }
 
@@ -202,22 +250,30 @@ function order() {
     console.log("The total is "+totalPrice);
     console.log("your change is " +change);
 
+    //put out receipt
     RECEIPT_OUTPUT.innerHTML += "<p>Thanks "+userName+", your order has been placed</p>";
     RECEIPT_OUTPUT.innerHTML += "<p>You ordered " +SHOPPING_LIST+ "</p>";
     RECEIPT_OUTPUT.innerHTML += "<p> The total price is $"+totalPrice+"</p>";
     RECEIPT_OUTPUT.innerHTML += "<p>Your change is $" +change+ "</p>";
 }
 
-/**********************nav****************************/
 
+/******************************************************nav***************************************************/
+
+/******************show home************/
 function showHome() {
-    //Show cart
     console.log("Show cart");
+    
+    //hides all but home page
     menu.style.display = "none";
     cart.style.display = " none";
     receipt.style.display = "none";
     home.style.display = "block";
+    
+    //changes title
     TITLE.innerHTML = "Home page";
+
+    //nav buttons
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "none";    
@@ -225,13 +281,18 @@ function showHome() {
 
 /******************show cart************/
 function showCart() {
-    //Show cart
     console.log("Show cart");
+
+    //hides all but cart
     menu.style.display = "none";
     cart.style.display = "block";
     receipt.style.display = "none";
     home.style.display = "none";
+
+    //changes title
     TITLE.innerHTML = "Your cart";
+
+    //nav buttons
     showCartBtn.style.display = "none";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "block";    
@@ -239,13 +300,18 @@ function showCart() {
 
 /**************show menu***********/
 function showMenu() {
-    //show menu
     console.log("Show Menu");
+
+    //hides all but menu
     menu.style.display = "block";
     cart.style.display = "none";
     receipt.style.display = "none";
     home.style.display = "none";
+
+    //changes title
     TITLE.innerHTML = "Menu";
+
+    //nav buttons
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "none";
     showHomeBtn.style.display = "block";    
@@ -253,14 +319,18 @@ function showMenu() {
 
 /**********show receipt********/
 function showReceipt() {
-    //show receipt
     console.log("Show receipt");
+
+    //hides all but receipt
     menu.style.display = "none";
     cart.style.display = "none";
     receipt.style.display = "block";
     home.style.display = "none";
+
+    //changes title
     TITLE.innerHTML = "Receipt";
-    showReceiptBtn.style.display = "none";
+
+    //nav buttons
     showCartBtn.style.display = "block";
     showMenuBtn.style.display = "block";
     showHomeBtn.style.display = "block";    
@@ -269,4 +339,3 @@ function showReceipt() {
 /****************************
 end of code
 ****************************/
-
