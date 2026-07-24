@@ -214,7 +214,7 @@ function order() {
     let change = userMoney - totalPrice;
 
     //makes sure user entered enough money
-    if (userMoney < totalPrice-1 || userMoney < 0 || change <= -1) {
+    if (userMoney < totalPrice - 1 || userMoney < 0 || change <= -1) {
         console.log("You havent payed enough!");
         RECEIPT_OUTPUT.innerHTML = "<p>You havent payed enough!</p>";
         return; 
@@ -227,14 +227,14 @@ function order() {
         return; 
     }
 
-    if (userMoney >= 301) {
+    if (userMoney >= 201) {
         console.log("You have payed too much!");
         RECEIPT_OUTPUT.innerHTML = "<p>You have payed too much!</p>";
         return; 
     }
 
     //makes sure user entered form
-    if (RECEIPT_FORM.checkValidity() == false || USER_NAME.value != String || USER_MONEY != Number) {
+    if (RECEIPT_FORM.checkValidity() == false) {
         RECEIPT_OUTPUT.innerHTML = "<p>Please fill in the form correctly</p>";
         return; 
     }
