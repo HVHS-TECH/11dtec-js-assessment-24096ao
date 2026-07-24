@@ -41,7 +41,6 @@
     display: block;
 } 
 /***********************************hide & show end***************************************/
-
 /* 
 dark brown / 30% --> b1887f
 light brown / 60% --> efd5c3
@@ -49,7 +48,6 @@ blue / 10% --> 00c3ff
 light blue --> afccdf
 hover --> 88e3ff 
 */
-
 /****************************Nav*********************************/
 nav {
     background-color:#b1887f;
@@ -88,6 +86,7 @@ body {
     background-color: #efd5c3;
 }
 
+/*buttons*/
 button {
     border-color: #00c3ff;
     background: #00c3ff;
@@ -106,6 +105,7 @@ button:hover {
     background: #afccdf;
 }
 
+/*imgs*/
 .smallImg {
     align-items: center;
 }

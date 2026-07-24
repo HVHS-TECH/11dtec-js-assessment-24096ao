@@ -201,6 +201,7 @@ function removeItem(_product, _price) {
 
     OUTPUT.innerHTML += "<p>You have removed 1 " +_product+"</p>";
     ITEM_LIST.innerHTML += "<p>You removed 1 " +_product+"</p>";
+    RECEIPT_OUTPUT.innerHTML = "<p>The total price is " +totalPrice+"</p>";
     //total is in cart
     TOTAL.innerHTML = "<p>The total price is now "+totalPrice+"</p>";
 }
@@ -213,13 +214,13 @@ function order() {
     let change = userMoney - totalPrice;
 
     //makes sure user entered enough money
-    if (userMoney < totalPrice-0.1 || userMoney < 0 || change <= -1) {
+    if (userMoney < totalPrice-1 || userMoney < 0 || change <= -1) {
         console.log("You havent payed enough!");
         RECEIPT_OUTPUT.innerHTML = "<p>You havent payed enough!</p>";
         return; 
     }
 
-    if (SHOPPING_LIST.length >= 21) {
+    if (SHOPPING_LIST.length >= 11) {
         console.log("You have ordered too much!");
         RECEIPT_OUTPUT.innerHTML = "<p>You have ordered too much!</p>";
         RECEIPT_OUTPUT.innerHTML = "<p>Please romove some items</p>";
@@ -233,7 +234,7 @@ function order() {
     }
 
     //makes sure user entered form
-    if (RECEIPT_FORM.checkValidity() == false) {
+    if (RECEIPT_FORM.checkValidity() == false || USER_NAME.value != String || USER_MONEY != Number) {
         RECEIPT_OUTPUT.innerHTML = "<p>Please fill in the form correctly</p>";
         return; 
     }
